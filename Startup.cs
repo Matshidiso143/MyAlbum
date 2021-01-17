@@ -62,7 +62,7 @@ namespace MyAlbum
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Image}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
