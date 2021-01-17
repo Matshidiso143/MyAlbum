@@ -1,0 +1,29 @@
+﻿@model MyAlbum.Models.ImageClass
+@{
+    ViewData["Title"] = "Index";
+}
+<center>
+
+    <h1>My Photo Album</h1>
+    <hr />
+    <form method="post" enctype="multipart/form-data" asp-controller="Image" asp-action="Index">
+        <input type="file" name="imagefile" />
+        <input type="submit" value="Upload" />
+        <hr />
+        <table class="table">
+            <tr>
+                <th>Image Name</th>
+                <th>Image</th>
+            </tr>
+            @foreach (var item in Model.FileImage)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td><img src="~/images/@item.Name" height="100" width="140" /></td>
+                    <td><a href="@Url.Action("Delete","Image",new {imagedel = item.Name})">Delete</a></td>
+                </tr>
+            }
+        </table>
+    </form>
+
+</center>
