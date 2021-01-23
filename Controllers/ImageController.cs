@@ -7,6 +7,7 @@ using MyAlbum.Models;
 using System.IO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MyAlbum.Controllers
 {
@@ -20,7 +21,7 @@ namespace MyAlbum.Controllers
             _iweb = iweb;
 
         }
-
+        [Authorize]
         public IActionResult Index()
         {
             ImageClass ic = new ImageClass();
@@ -53,6 +54,18 @@ namespace MyAlbum.Controllers
             {
                 System.IO.File.Delete(imagedel);
                 fl.Delete();
+            }
+            return RedirectToAction("Index");
+        }
+        public IActionResult Share(string imageshare)
+
+        {
+            imageshare = Path.Combine(_iweb.WebRootPath, "images", imageshare);
+            FileInfo fl = new FileInfo(imageshare);
+            if (fl != null)
+            {
+               //System.IO.File.Share(imageshare);
+               //fl.Share();
             }
             return RedirectToAction("Index");
         }

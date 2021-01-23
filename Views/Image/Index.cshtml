@@ -17,12 +17,14 @@
             </tr>
             @foreach (var item in Model.FileImage)
             {
-                <tr>
-                    <td>@item.Name</td>
-                    <td><img src="~/images/@item.Name" height="100" width="140" /></td>
-                    <td><a href="@Url.Action("Delete","Image",new {imagedel = item.Name})">Delete</a></td>
-                </tr>
+        <tr>
+            <td>@item.Name</td>
+            <td><img src="~/images/@item.Name" height="100" width="140" /></td>
+            <td><a href="@Url.Action("Delete","Image",new {imagedel = item.Name})">Delete</a></td>
+            <td><a href="@Url.Action("Share","Image",new {imagedel = item.Name})">Share</a></td>
+        </tr>
             }
+           
         </table>
     </form>
 
