@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace MyAlbum.Controllers
 {
+     [Authorize]
     public class ImageController : Controller
     {
 
@@ -22,7 +23,7 @@ namespace MyAlbum.Controllers
             _iweb = iweb;
 
         }
-       // [Authorize]
+       
         public IActionResult Index()
         {
             ImageClass ic = new ImageClass();
