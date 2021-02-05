@@ -30,7 +30,6 @@ namespace MyAlbum.Controllers
         public FileResult GenerateAndDownloadZip()
         {
             var webRoot = _iweb.WebRootPath;
-            var filename = "MyAlbum.zip";
             var tempOutput = webRoot + "/images/" + filename;
 
             using (ZipOutputStream oZipOutputStream = new ZipOutputStream(System.IO.File.Create(tempOutput)))
