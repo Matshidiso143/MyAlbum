@@ -15,13 +15,14 @@ namespace MyAlbum.Controllers
     {
 
         private readonly IWebHostEnvironment _iweb;
+        
 
         public ImageController(IWebHostEnvironment iweb)
         {
             _iweb = iweb;
 
         }
-        [Authorize]
+       // [Authorize]
         public IActionResult Index()
         {
             ImageClass ic = new ImageClass();
