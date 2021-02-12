@@ -22,6 +22,7 @@ namespace MyAlbum.Controllers
         {
             return View();
         }
+      
 
         public IActionResult Privacy()
         {

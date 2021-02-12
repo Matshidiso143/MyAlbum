@@ -44,9 +44,6 @@ namespace MyAlbum.Controllers
                 ImageList.Add(webRoot + "/images/Tower.jpg");
                 ImageList.Add(webRoot + "/images/Sky.jpg");
                 ImageList.Add(webRoot + "/images/Nature.jpg");
-                ImageList.Add(webRoot + "/images/Cartoon2.jpg");
-                ImageList.Add(webRoot + "/images/Cartoon1.jpg");
-
 
                 for (int i =0; i<ImageList.Count;i++)
                 {
